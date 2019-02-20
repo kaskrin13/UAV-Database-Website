@@ -1,0 +1,136 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}">
+	
+    <title>Aerial Imagery Website</title>
+</head>
+
+<body>
+    <div class="main-body">
+        <div class="container">
+            <div class="row">
+                <div class="main-page">
+                    <!-- Side bar menu -->
+                    <aside class="main-navigation">
+                        <div class="main-menu">
+
+                            <div class="menu-container">
+                                <div class="block-keep-ratio block-keep-ratio-2-1 block-width-full home">
+                                    <a href="{{ url_for('home', filename='index.html') }}" class="block-keep-ratio__content  main-menu-link">
+                                        <span class="main-menu-link-text">
+                                            HOME    
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-container">
+                                <div class="block-keep-ratio  block-keep-ratio-1-1  block-width-half  pull-left  about-main">
+                                    <a href="{{ url_for('about', filename='about.html') }}" class="main-menu-link about block-keep-ratio__content flexbox-center">
+                                        <i class="fa fa-user fa-4x main-menu-link-icon"></i> ABOUT
+                                    </a>
+                                </div>
+
+                                <div class="block-keep-ratio  block-keep-ratio-1-1  block-width-half  pull-right  contact-main">
+                                    <a <a href="{{ url_for('contact', filename='contact.html') }}" class="main-menu-link contact block-keep-ratio__content flexbox-center">
+                                        <i class="fa fa-envelope-o fa-4x main-menu-link-icon"></i> CONTACT
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 
+                            <div class="menu-container">
+                                <div class="block-keep-ratio block-keep-ratio-1-1 block-keep-ratio-md-2-1 block-width-full gallery">
+                                    <a href="gallery.html" class="main-menu-link  block-keep-ratio__content">
+                                        <span class="main-menu-link-text">
+                                            GALLERY    
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+							-->
+                        </div>
+                    </aside>
+
+                    <!-- First row -->
+                    <div class="content-main">
+                        <div class="row margin-b-30">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="image-main">
+                                    <div class="image-main-text">
+                                        <div class="heading">
+                                            <h1>Field 1</h1>
+                                            <p class="text-uppercase">Mechanization Farm</p>
+                                        </div>
+                                        <div class="desc">
+											<div class="tg-wrap">
+												<table class="tg">
+													<tr>
+														<td class="tg-0lax">Date:</td>
+														<td class="tg-0lax">8/6/2018</td>
+													</tr>
+													<tr>
+														<td class="tg-0lax">Altitude:</td>
+														<td class="tg-0lax">20m</td>
+													</tr>
+													<tr>
+														<td class="tg-0lax">Crop:</td>
+														<td class="tg-0lax">Soybeans</td>
+													</tr>
+													<tr>
+														<td class="tg-0lax">Image type:</td>
+														<td class="tg-0lax">Red</td>
+													</tr>
+													<tr>
+														<td class="tg-0lax">Aerial Platform:</td>
+														<td class="tg-0lax">DJI Phantom 3 Pro</td>
+													</tr>
+												</table>
+											</div>
+											<br>
+                                        </div>
+                                        <img src="{{ url_for('static', filename='images/2018/16 Rows/8-6-2018 20m/Bands/16Rows_20m_Phantom_Multi_(8-6-2018)_transparent_mosaic_red-thumb.jpg') }}" class="field-thumb" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer">
+                    <p class="copyright"></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type=text/javascript src="{{url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({
+                'alwaysOn': true
+            }).parent().addClass('center-map');
+        });
+    </script>
+	<script src="static/js/jquery.rwdImageMaps.min.js"></script>
+	<script>
+		$(document).ready(function(e) {
+			$('img[usemap]').rwdImageMaps();
+		});
+	</script>
+</body>
+
+</html>
