@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+	
+    <title>Rice Farm</title>
+</head>
+
+<body>
+    <div class="main-body">	
+        <div class="container">
+            <div class="row">               
+                <div class="main-page">
+
+                    <aside class="main-navigation">
+                        <div class="main-menu">
+
+                            <div class="menu-container">
+                                <div class="block-keep-ratio block-keep-ratio-2-1 block-width-full home">                                    
+                                    <a href="index.html" class="block-keep-ratio__content  main-menu-link">
+                                        <span class="main-menu-link-text">
+                                            HOME    
+                                        </span>                                        
+                                    </a>
+                                </div>                                
+                            </div>
+
+                            <div class="menu-container">                                
+                                <div class="block-keep-ratio  block-keep-ratio-1-1  block-width-half  pull-left  about-main">                                    
+                                    <a href="about.html" class="main-menu-link about block-keep-ratio__content flexbox-center">
+                                        <i class="fa fa-user fa-4x main-menu-link-icon"></i>
+                                        ABOUT
+                                    </a>                                    
+                                </div>
+
+                                <div class="block-keep-ratio  block-keep-ratio-1-1  block-width-half  pull-right  contact-main">
+                                    <a href="contact.html" class="main-menu-link contact block-keep-ratio__content flexbox-center">
+                                        <i class="fa fa-envelope-o fa-4x main-menu-link-icon"></i>
+                                        CONTACT
+                                    </a>                                
+                                </div>    
+                            </div>   
+
+                            <!-- 
+                            <div class="menu-container">
+                                <div class="block-keep-ratio block-keep-ratio-1-1 block-keep-ratio-md-2-1 block-width-full gallery">
+                                    <a href="gallery.html" class="main-menu-link  block-keep-ratio__content">
+                                        <span class="main-menu-link-text">
+                                            GALLERY    
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+							-->
+                        </div> 
+                    </aside> 
+
+                    <div class="content-main">
+                        <div class="row margin-b-30">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="banner-main-home">                                
+                                    <div class="banner-main-home-text">
+                                        <div class="heading">
+                                            <h1>Rice Fields</h1>
+                                            <p class="text-uppercase"></p>
+                                        </div>
+                                        <div class="desc">
+                                            <p>There is one field at this location. The soil is some type. This field is used primarily for crop production systems research. </p>
+                                        </div>
+                                    </div>
+                                </div>                        
+                            </div>    
+                        </div>
+						 
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="box bottom-main">
+									<div class="info float-container">
+										<div class="col-sm-12 bottom-title">
+											<h3 class="text-uppercase">Rice Fields</h3>
+											<h4 class="text-uppercase">Stoneville, MS</h4>
+										</div>
+										<p class="bottom-desc">Highlighted below are the fields in this area. Select a field for more information.  Refer to the legend below for the crops grown this area.</p>
+
+										<ul class="legend">
+											<li><span class="cotton"></span> Rice</li><br>
+										</ul>
+										
+										<div id="MapWrapper" style="margin:50px;">
+											<img id="fieldMap1" src="images/rice-area.png" alt="" class="map" usemap="#map" />
+										</div>
+										<map name="map" id="map">
+											<area alt="Field 1" title="Field 1" data-toggle="modal" data-target="#modal1" shape="poly" coords="293,8,460,7,442,625,263,630" data-maphilight='{"fillColor":"f5f5f5", "fillOpacity":"0.4", "strokeOpacity":"0"}' />
+										</map>
+										
+										<!-- Trigger the modal with an invisible button -->
+										<button type="button" style="display:none;" data-toggle="modal" data-target="#modal1">Open Modal</button>
+
+										<!-- Modal -->
+										<div id="modal1" class="modal fade" role="dialog">
+											<div class="modal-dialog">
+
+												<!-- Modal content-->
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+														<h4 class="modal-title">Rice Field</h4>
+													</div>
+													<div class="modal-body">
+														<p>Some text in the modal.</p>
+														<div class="dropdown">
+															<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">8-6-2018
+															<span class="caret"></span></button>
+															<ul class="dropdown-menu">
+																<li><a href="Rice-20180806-90m-RGB.html">RGB</a></li>
+																<li><a href="Rice-20180806-90m-NIR.html">NIR</a></li>
+																<li><a href="Rice-20180806-90m-Red.html">Red</a></li>
+																<li><a href="Rice-20180806-90m-Green.html">Green</a></li>
+															</ul>
+														</div>
+
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> <!-- row -->
+                    </div> <!-- .content-main -->
+                </div> <!-- .main-page -->
+            </div> <!-- .row -->           
+            <footer class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer">
+                    <p class="copyright"></p>
+                </div>    
+            </footer>  <!-- .row -->      
+        </div> <!-- .container -->
+    </div> <!-- .main-body -->
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.maphilight.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.map').maphilight({'alwaysOn':true}).parent().addClass('center-map');
+		});
+	</script>
+
+</body>
+</html>

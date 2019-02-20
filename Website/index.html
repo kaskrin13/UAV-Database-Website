@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Aerial Imagery Website</title>
+</head>
+
+<body>
+    <div class="main-body">
+        <div class="container">
+            <div class="row">
+                <div class="main-page">
+                    <!-- Side bar menu -->
+                    <aside class="main-navigation">
+                        <div class="main-menu">
+
+                            <div class="menu-container">
+                                <div class="block-keep-ratio block-keep-ratio-2-1 block-width-full home">
+                                    <a href="index.html" class="block-keep-ratio__content  main-menu-link">
+                                        <span class="main-menu-link-text">
+                                            HOME    
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-container">
+                                <div class="block-keep-ratio  block-keep-ratio-1-1  block-width-half  pull-left  about-main">
+                                    <a href="about.html" class="main-menu-link about block-keep-ratio__content flexbox-center">
+                                        <i class="fa fa-user fa-4x main-menu-link-icon"></i> ABOUT
+                                    </a>
+                                </div>
+
+                                <div class="block-keep-ratio  block-keep-ratio-1-1  block-width-half  pull-right  contact-main">
+                                    <a href="contact.html" class="main-menu-link contact block-keep-ratio__content flexbox-center">
+                                        <i class="fa fa-envelope-o fa-4x main-menu-link-icon"></i> CONTACT
+                                    </a>
+                                </div>
+                            </div>
+							
+							<!-- 
+                            <div class="menu-container">
+                                <div class="block-keep-ratio block-keep-ratio-1-1 block-keep-ratio-md-2-1 block-width-full gallery">
+                                    <a href="gallery.html" class="main-menu-link  block-keep-ratio__content">
+                                        <span class="main-menu-link-text">
+                                            GALLERY    
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+							-->
+                        </div>
+                    </aside>
+
+                    <!-- First row -->
+                    <div class="content-main">
+                        <div class="row margin-b-30">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="banner-main-home">
+                                    <div class="banner-main-home-text">
+                                        <div class="heading">
+                                            <h1>Aerial Imagery</h1>
+                                            <p class="text-uppercase">USDA ARS</p>
+                                        </div>
+                                        <div class="desc">
+                                            <p>This website hosts aerial orthomosaic imagery collected by the USDA ARS over a period of several years. 
+											The data ranges from RGB to hyperspectral images, captured by airplanes and UAVs for multiple fields and scientists. 
+											</p>
+											<p>To improve website performance, all of the images here are thumbnails that are a fraction of the original size (more than 97% smaller).
+											For full size images or data sets, please contact us.</p>
+                                        </div>
+                                        <img src="images/ARS-Logo.png" alt="ARS" id="main-logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location Row -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="box bottom-main">
+                                    <div class="info float-container">
+                                        <div class="col-sm-12 bottom-title">
+                                            <h3 class="text-uppercase">Research Areas</h3>
+                                            <h4 class="text-uppercase">Stoneville, MS</h4>
+                                        </div>
+                                        <!-- Locations -->
+                                        <div class="row">
+                                            <p class="bottom-desc"> </p>
+                                            <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
+												<!-- Button for Modal -->
+												<button type="button" class="btn-main" id="btn1" data-toggle="modal" data-target="#modal1">
+													<p class="btn-main-text" id="btn1-text">Mechanization Farm</p>
+												</button>
+
+												<!-- Modal -->
+												<div id="modal1" class="modal fade" role="dialog">
+													<div class="modal-dialog">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal">&times;</button>
+																<h4 class="modal-title">Please select a year below:</h4>
+															</div>
+															<div class="modal-body">
+																<p>Data available for these years.</p>
+																<a href="mech-farm.html">
+																	<button class="yearButton" type="button">2015</button>
+																</a>
+																<a href="mech-farm.html">
+																	<button class="yearButton" type="button">2016</button>
+																</a>
+																<a href="mech-farm.html">
+																	<button class="yearButton" type="button">2017</button>
+																</a>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+															</div>
+														</div>
+													</div>
+												</div>
+                                            </div>
+                                            <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                                <!-- Button for Modal -->
+												<button type="button" class="btn-main" id="btn2" data-toggle="modal" data-target="#modal2">
+													<p class="btn-main-text" id="btn2-text">Rice Farm</p>
+												</button>
+
+												<!-- Modal -->
+												<div id="modal2" class="modal fade" role="dialog">
+													<div class="modal-dialog">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal">&times;</button>
+																<h4 class="modal-title">Please select a year below:</h4>
+															</div>
+															<div class="modal-body">
+																<p>Data available for these years.</p>
+																<a href="rice-farm.html">
+																	<button class="yearButton" type="button">2016</button>
+																</a>
+																<a href="rice-farm.html">
+																	<button class="yearButton" type="button">2017</button>
+																</a>
+																<a href="rice-farm.html">
+																	<button class="yearButton" type="button">2018</button>
+																</a>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+															</div>
+														</div>
+													</div>
+												</div>
+                                            </div>
+                                            <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                                <!-- Button for Modal -->
+												<button type="button" class="btn-main" id="btn3" data-toggle="modal" data-target="#modal3">
+													<p class="btn-main-text" id="btn3-text">Rice Farm</p>
+												</button>
+
+												<!-- Modal -->
+												<div id="modal3" class="modal fade" role="dialog">
+													<div class="modal-dialog">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal">&times;</button>
+																<h4 class="modal-title">Please select a year below:</h4>
+															</div>
+															<div class="modal-body">
+																<p>Data available for these years.</p>
+																<a href="rice-farm.html">
+																	<button class="yearButton" type="button">2017</button>
+																</a>
+																<a href="rice-farm.html">
+																	<button class="yearButton" type="button">2018</button>
+																</a>
+																<a href="rice-farm.html">
+																	<button class="yearButton" type="button">2019</button>
+																</a>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+															</div>
+														</div>
+													</div>
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer">
+                    <p class="copyright"></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
