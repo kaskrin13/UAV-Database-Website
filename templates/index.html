@@ -24,7 +24,7 @@
 
                             <div class="menu-container">
                                 <div class="block-keep-ratio block-keep-ratio-2-1 block-width-full home">
-                                    <a href="{{ url_for('home', filename='index.html') }}" class="block-keep-ratio__content  main-menu-link">
+                                    <a href="{{ url_for('home') }}" class="block-keep-ratio__content  main-menu-link">
                                         <span class="main-menu-link-text">
                                             HOME    
                                         </span>
@@ -34,13 +34,13 @@
 
                             <div class="menu-container">
                                 <div class="block-keep-ratio  block-keep-ratio-1-1  block-width-half  pull-left  about-main">
-                                    <a href="{{ url_for('about', filename='about.html') }}" class="main-menu-link about block-keep-ratio__content flexbox-center">
+                                    <a href="{{ url_for('about') }}" class="main-menu-link about block-keep-ratio__content flexbox-center">
                                         <i class="fa fa-user fa-4x main-menu-link-icon"></i> ABOUT
                                     </a>
                                 </div>
 
                                 <div class="block-keep-ratio  block-keep-ratio-1-1  block-width-half  pull-right  contact-main">
-                                    <a href="{{ url_for('contact', filename='contact.html') }}" class="main-menu-link contact block-keep-ratio__content flexbox-center">
+                                    <a href="{{ url_for('contact') }}" class="main-menu-link contact block-keep-ratio__content flexbox-center">
                                         <i class="fa fa-envelope-o fa-4x main-menu-link-icon"></i> CONTACT
                                     </a>
                                 </div>
@@ -67,18 +67,20 @@
                                 <div class="banner-main-home">
                                     <div class="banner-main-home-text">
                                         <div class="heading">
-                                            <h1>Aerial Imagery</h1>
-                                            <p class="text-uppercase">USDA ARS</p>
+                                            <h1>Research Farm Aerial Imagery</h1>
+                                            <p class="text-uppercase">Stoneville, MS</p>
                                         </div>
                                         <div class="desc">
-                                            <p>This website hosts aerial orthomosaic imagery collected by the USDA ARS over a period of several years. 
-											The data ranges from RGB to hyperspectral images, captured by airplanes and UAVs for multiple fields and scientists. 
+                                            <p>
+												This website hosts aerial orthomosaic RGB, color-infrared and thermal imagery collected currently and over past a few years. 
+												The images were captured by agricultural aircraft at 1,000 – 3,000 ft altitude and UAV drones at 30 – 300 ft for multiple fields 
+												in or near the research farms in Stoneville, MS.  
 											</p>
-											<p>To improve website performance, all of the images here are thumbnails that are a fraction of the original size (more than 97% smaller).
-											For full size images or data sets, please contact us.</p>
+											<p>
+												To improve website performance, all the demonstrated images are thumbnails that are a fraction of the original size (about 97% smaller). 
+												For full size images, please contact us.
+											</p>
                                         </div>
-                                        
-										<img src="{{ url_for('static', filename='images/ARS-Logo.png') }}" alt="ARS" id="main-logo">
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +92,7 @@
                                 <div class="box bottom-main">
                                     <div class="info float-container">
                                         <div class="col-sm-12 bottom-title">
-                                            <h3 class="text-uppercase">Research Areas</h3>
+                                            <h3 class="text-uppercase">Imaging Areas</h3>
                                             <h4 class="text-uppercase">Stoneville, MS</h4>
                                         </div>
                                         <!-- Locations -->
@@ -99,7 +101,7 @@
                                             <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
 												<!-- Button for Modal -->
 												<button type="button" class="btn-main" id="btn1" data-toggle="modal" data-target="#modal1">
-													<p class="btn-main-text" id="btn1-text">Mechanization Farm</p>
+													<p class="btn-main-text" id="btn1-text">Frankel Farm</p>
 												</button>
 
 												<!-- Modal -->
@@ -113,15 +115,13 @@
 															</div>
 															<div class="modal-body">
 																<p>Data available for these years.</p>
-																<a href="{{ url_for('mechFarm', filename='mechFarm.html') }}">
-																	<button class="yearButton" type="button">2015</button>
+																{%- for year in years %}
+																{%- if year[1] %}
+																<a href="{{ url_for('mechFarm', year=year[0]) }}">
+																	<button class="yearButton" type="button">{{ year[0] }}</button>
 																</a>
-																<a href="{{ url_for('mechFarm', filename='mechFarm.html') }}">
-																	<button class="yearButton" type="button">2016</button>
-																</a>
-																<a href="{{ url_for('mechFarm', filename='mechFarm.html') }}">
-																	<button class="yearButton" type="button">2017</button>
-																</a>
+																{%- endif %}
+																{%- endfor %}
 															</div>
 															<div class="modal-footer">
 																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -147,15 +147,13 @@
 															</div>
 															<div class="modal-body">
 																<p>Data available for these years.</p>
-																<a href="{{ url_for('riceFarm', filename='riceFarm.html') }}">
-																	<button class="yearButton" type="button">2016</button>
+																{%- for year in years %}
+																{%- if year[2] %}
+																<a href="{{ url_for('riceFarm', year=year[0]) }}">
+																	<button class="yearButton" type="button">{{ year[0] }}</button>
 																</a>
-																<a href="{{ url_for('riceFarm', filename='riceFarm.html') }}">
-																	<button class="yearButton" type="button">2017</button>
-																</a>
-																<a href="{{ url_for('riceFarm', filename='riceFarm.html') }}">
-																	<button class="yearButton" type="button">2018</button>
-																</a>
+																{%- endif %}
+																{%- endfor %}
 															</div>
 															<div class="modal-footer">
 																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -167,7 +165,7 @@
                                             <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                                 <!-- Button for Modal -->
 												<button type="button" class="btn-main" id="btn3" data-toggle="modal" data-target="#modal3">
-													<p class="btn-main-text" id="btn3-text">Rice Farm</p>
+													<p class="btn-main-text" id="btn3-text">Backer Farm</p>
 												</button>
 
 												<!-- Modal -->
@@ -181,15 +179,13 @@
 															</div>
 															<div class="modal-body">
 																<p>Data available for these years.</p>
-																<a href="rice-farm.html">
-																	<button class="yearButton" type="button">2017</button>
+																{%- for year in years %}
+																{%- if year[3] %}
+																<a href="{{ url_for('schoolFarm', year=year[0]) }}">
+																	<button class="yearButton" type="button">{{ year[0] }}</button>
 																</a>
-																<a href="rice-farm.html">
-																	<button class="yearButton" type="button">2018</button>
-																</a>
-																<a href="rice-farm.html">
-																	<button class="yearButton" type="button">2019</button>
-																</a>
+																{%- endif %}
+																{%- endfor %}
 															</div>
 															<div class="modal-footer">
 																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

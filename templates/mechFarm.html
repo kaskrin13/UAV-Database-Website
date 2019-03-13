@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}">
     
-	<title>Mechanization Farm</title>
+	<title>Frankel Farm</title>
 </head>
 
 <body>
@@ -22,7 +21,7 @@
                         <div class="main-menu">
                             <div class="menu-container">
                                 <div class="block-keep-ratio block-keep-ratio-2-1 block-width-full home">
-                                    <a href="{{ url_for('home', filename='index.html') }}" class="block-keep-ratio__content  main-menu-link">
+                                    <a href="{{ url_for('home') }}" class="block-keep-ratio__content  main-menu-link">
                                         <span class="main-menu-link-text">
                                             HOME    
                                         </span>
@@ -32,13 +31,13 @@
 
                             <div class="menu-container">
                                 <div class="block-keep-ratio  block-keep-ratio-1-1  block-width-half  pull-left  about-main">
-                                    <a href="{{ url_for('about', filename='about.html') }}" class="main-menu-link about block-keep-ratio__content flexbox-center">
+                                    <a href="{{ url_for('about') }}" class="main-menu-link about block-keep-ratio__content flexbox-center">
                                         <i class="fa fa-user fa-4x main-menu-link-icon"></i> ABOUT
                                     </a>
                                 </div>
 
                                 <div class="block-keep-ratio  block-keep-ratio-1-1  block-width-half  pull-right  contact-main">
-                                    <a href="{{ url_for('about', filename='about.html') }}" class="main-menu-link contact block-keep-ratio__content flexbox-center">
+                                    <a href="{{ url_for('about') }}" class="main-menu-link contact block-keep-ratio__content flexbox-center">
                                         <i class="fa fa-envelope-o fa-4x main-menu-link-icon"></i> CONTACT
                                     </a>
                                 </div>
@@ -64,11 +63,11 @@
                                 <div class="banner-main-home">
                                     <div class="banner-main-home-text">
                                         <div class="heading">
-                                            <h1>Mechanization Farm</h1>
+                                            <h1>Frankel Farm</h1>
                                             <p class="text-uppercase"></p>
                                         </div>
                                         <div class="desc">
-                                            <p>There are x fields at this location. The soil is some type. These fields are used primarily for crop production systems research. </p>
+                                            <p>There are 3 fields at this location. These fields are used primarily for crop production systems research. </p>
                                         </div>
                                     </div>
                                 </div>
@@ -80,10 +79,10 @@
                                 <div class="box bottom-main">
                                     <div class="info float-container">
                                         <div class="col-sm-12 bottom-title">
-                                            <h3 class="text-uppercase">Mechanization Farm</h3>
+                                            <h3 class="text-uppercase">Frankel Farm</h3>
                                             <h4 class="text-uppercase">Stoneville, MS</h4>
                                         </div>
-                                        <p class="bottom-desc">Highlighted below are the fields that were flown over for the selected year. Click on a field to see dates flown and the type of data available for a specific date. Refer to the legend below for the crops grown in a certain field this year.</p>
+                                        <p class="bottom-desc">Highlighted below are the fields that have data for the selected year. Click on a field to see dates flown and the type of data available for a specific date. Refer to the legend below for the crops grown in a certain field this year.</p>
 					
                                         <ul class="legend">
                                             <li><span class="soybean"></span> Soybean</li>
@@ -91,159 +90,52 @@
                                             <li><span class="corn"></span> Corn</li>
                                             <br>
                                             <li><span class="cotton"></span> Cotton</li>
+											<br>
+                                            <li><span class="rice"></span> Rice</li>
+											<br>
+                                            <li><span class="switchgrass"></span> Switchgrass</li>
                                         </ul>					
 										<div id="MapWrapper" style="margin:70px;">
 											<img id="fieldMap1" src="{{ url_for('static', filename='images/mech-area.png') }}" alt="" class="map" usemap="#map" />
 										</div>
-                                        <map name="map" id="map">
-                                            <area alt="Field 1" title="Field 1" data-toggle="modal" data-target="#modal1" shape="poly" coords="255,243,361,157,364,437,259,442" data-maphilight='{"fillColor":"eead0e", "fillOpacity":"0.4", "strokeOpacity":"0"}' />
-                                            <area alt="Field 2" title="Field 2" data-toggle="modal" data-target="#modal2" shape="poly" coords="365,246,367,438,454,436,451,247" data-maphilight='{"fillColor":"eead0e", "fillOpacity":"0.4", "strokeOpacity":"0"}' />
-                                            <area alt="Field 3" title="Field 3" data-toggle="modal" data-target="#modal3" shape="poly" coords="229,452,231,545,279,562,323,605,329,625,365,627,362,446" data-maphilight='{"fillColor":"ffff00", "fillOpacity":"0.4", "strokeOpacity":"0"}' />
-                                            <area alt="Field 4" title="Field 4" data-toggle="modal" data-target="#modal4" shape="poly" coords="368,445,455,441,456,637,432,625,372,626" data-maphilight='{"fillColor":"f5f5f5", "fillOpacity":"0.4", "strokeOpacity":"0"}' />
-                                        </map>
-
-										<!-- Trigger the modal with an invisible button -->
-										<button type="button" style="display:none;" data-toggle="modal" data-target="#modal1">Open Modal</button>
-
-										<!-- Modal -->
-										<div id="modal1" class="modal fade" role="dialog">
-											<div class="modal-dialog">
-
-												<!-- Modal content-->
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal">&times;</button>
-														<h4 class="modal-title">Field 1</h4>
-													</div>
-													<div class="modal-body">
-														<p>Some text in the modal.</p>
-														<div class="dropdown">
-															<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">8-6-2018
-															<span class="caret"></span></button>
-															<ul class="dropdown-menu">
-																<li><a href="{{ url_for('sixteenRows2018080620mRGB', filename='16Rows-20180806-20m-RGB.html') }}">RGB</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mNIR', filename='16Rows-20180806-20m-NIR.html') }}">NIR</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mRed', filename='16Rows-20180806-20m-Red.html') }}">Red</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mGreen', filename='16Rows-20180806-20m-Green.html') }}">Green</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mBlue', filename='16Rows-20180806-20m-Blue.html') }}">Blue</a></li>
-															</ul>
+										<map name="map" id="map">
+											<area alt="Field 14" title="Field 14" data-toggle="modal" data-target="#modal1" shape="poly" coords="454,250,454,344,549,345,547,254" data-maphilight='{"fillColor":"eead0e", "fillOpacity":"0.4", "strokeOpacity":"0"}' />
+											<area alt="Field 3" title="Field 3" data-toggle="modal" data-target="#modal2" shape="poly" coords="319,448,322,605,281,564,279,448" data-maphilight='{"fillColor":"eead0e", "fillOpacity":"0.4", "strokeOpacity":"0"}' />
+											<area alt="Fields 11,12,13,14" title="Fields 11,12,13,14" data-toggle="modal" data-target="#modal3" shape="poly" coords="548,436,551,640,466,638,465,440" data-maphilight='{"fillColor":"eead0e", "fillOpacity":"0.4", "strokeOpacity":"0"}' />
+										</map>
+										{%- for field in fields %} 
+											<!-- Trigger the modal with an invisible button -->
+											<button type="button" style="display:none;" data-toggle="modal" data-target="#modal{{ loop.index }}">Open Modal</button>
+											<!-- Modal -->
+											<div id="modal{{ loop.index }}" class="modal fade" role="dialog">
+												<div class="modal-dialog">
+													<!-- Modal content-->
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal">&times;</button>
+															<h4 class="modal-title">{{ field[0] }}</h4>
 														</div>
-
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+														<div class="modal-body">
+															<p>Click on a date to view the types of imagery data gathered. Then click on the type to view the data.</p>
+															{%- for date in field[1] %}
+															<div class="dropdown" style="display:inline-block;">
+																<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ date[0] }}
+																<span class="caret"></span></button>
+																<ul class="dropdown-menu">
+																	{%- for imageType in date[1] %}
+																	<li><a href="{{ url_for('showMechField', year=year, index=(field[0]+'-'+imageType[1]|string)) }}">{{ imageType[0] }}</a></li>
+																	{%- endfor %}
+																</ul>
+															</div>
+															{%- endfor %}
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-										
-										
-										<!-- Trigger the modal with an invisible button -->
-										<button type="button" style="display:none;" data-toggle="modal" data-target="#modal2">Open Modal</button>
-
-										<!-- Modal -->
-										<div id="modal2" class="modal fade" role="dialog">
-											<div class="modal-dialog">
-
-												<!-- Modal content-->
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal">&times;</button>
-														<h4 class="modal-title">Field 2</h4>
-													</div>
-													<div class="modal-body">
-														<p>Some text in the modal.</p>
-														<div class="dropdown">
-															<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">8-6-2018
-															<span class="caret"></span></button>
-															<ul class="dropdown-menu">
-																<li><a href="{{ url_for('sixteenRows2018080620mRGB', filename='16Rows-20180806-20m-RGB.html') }}">RGB</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mNIR', filename='16Rows-20180806-20m-NIR.html') }}">NIR</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mRed', filename='16Rows-20180806-20m-Red.html') }}">Red</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mGreen', filename='16Rows-20180806-20m-Green.html') }}">Green</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mBlue', filename='16Rows-20180806-20m-Blue.html') }}">Blue</a></li>
-															</ul>
-														</div>
-
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-													</div>
-												</div>
-											</div>
-										</div>
-										
-										
-										<!-- Trigger the modal with an invisible button -->
-										<button type="button" style="display:none;" data-toggle="modal" data-target="#modal3">Open Modal</button>
-
-										<!-- Modal -->
-										<div id="modal3" class="modal fade" role="dialog">
-											<div class="modal-dialog">
-
-												<!-- Modal content-->
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal">&times;</button>
-														<h4 class="modal-title">Field 3</h4>
-													</div>
-													<div class="modal-body">
-														<p>Some text in the modal.</p>
-														<div class="dropdown">
-															<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">8-6-2018
-															<span class="caret"></span></button>
-															<ul class="dropdown-menu">
-																<li><a href="{{ url_for('sixteenRows2018080620mRGB', filename='16Rows-20180806-20m-RGB.html') }}">RGB</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mNIR', filename='16Rows-20180806-20m-NIR.html') }}">NIR</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mRed', filename='16Rows-20180806-20m-Red.html') }}">Red</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mGreen', filename='16Rows-20180806-20m-Green.html') }}">Green</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mBlue', filename='16Rows-20180806-20m-Blue.html') }}">Blue</a></li>
-															</ul>
-														</div>
-
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-													</div>
-												</div>
-											</div>
-										</div>
-										
-										
-										<!-- Trigger the modal with an invisible button -->
-										<button type="button" style="display:none;" data-toggle="modal" data-target="#modal4">Open Modal</button>
-
-										<!-- Modal -->
-										<div id="modal4" class="modal fade" role="dialog">
-											<div class="modal-dialog">
-
-												<!-- Modal content-->
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal">&times;</button>
-														<h4 class="modal-title">Field 4</h4>
-													</div>
-													<div class="modal-body">
-														<p>Some text in the modal.</p>
-														<div class="dropdown">
-															<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">8-6-2018
-															<span class="caret"></span></button>
-															<ul class="dropdown-menu">
-																<li><a href="{{ url_for('sixteenRows2018080620mRGB', filename='16Rows-20180806-20m-RGB.html') }}">RGB</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mNIR', filename='16Rows-20180806-20m-NIR.html') }}">NIR</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mRed', filename='16Rows-20180806-20m-Red.html') }}">Red</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mGreen', filename='16Rows-20180806-20m-Green.html') }}">Green</a></li>
-																<li><a href="{{ url_for('sixteenRows2018080620mBlue', filename='16Rows-20180806-20m-Blue.html') }}">Blue</a></li>
-															</ul>
-														</div>
-
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-													</div>
-												</div>
-											</div>
-										</div>
+										{%- endfor %}			
                                     </div>
                                 </div>
                             </div>
