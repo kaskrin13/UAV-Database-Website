@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}">
  
-    <title>Stoneville Research Farm - Contact</title>
+    <title>Stoneville Research Farms - Contact</title>
 </head>
 
 <body class="contact-page">
@@ -64,7 +64,7 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="gallery_title">
-										<h3>Stoneville Research Farm</h3>
+										<h3>Stoneville Research Farms</h3>
                                     </div>    
                                 </div>                            
                             </div>
@@ -101,7 +101,7 @@
                                     <div class="col-md-12 contact_title">
                                         CONTACT
                                     </div>
-
+                                    
                                     <div class="col-md-12 contact_text">
                                         For full size images or questions about the data, how it was collected and potential uses, 
 										please fill out the form to send an email or use the contact information below.
@@ -125,9 +125,7 @@
 
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div id="google-map">
-                                    <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=33.4209%2C-90.9095&key=AIzaSyAxlIh_cQk66ppaxtmjpNRSXHyL4Xivfsw" allowfullscreen></iframe>
-                                </div>
+                                <div id="google-map"></div>
                             </div>                            
                         </div>
 
@@ -146,6 +144,47 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type=text/javascript src="{{url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script>
+        /* Google map
+        ------------------------------------------------*/
+        var map = '';
+        var center;
+
+        function initMap() {
+            var mapOptions = {
+                                zoom: 14,
+                                center: new google.maps.LatLng(33.437613, -90.894691),
+                                mapTypeId: google.maps.MapTypeId.HYBRID,
+                                scrollwheel: false
+                            };  
+        
+            map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+
+            google.maps.event.addDomListener(map, 'idle', function() {
+                calculateCenter();
+            });
+        
+            google.maps.event.addDomListener(window, 'resize', function() {
+                map.setCenter(center);
+            });
+        } // initialize
+
+        function calculateCenter() {
+            center = map.getCenter();
+        }
+
+        function loadGoogleMap(){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAxlIh_cQk66ppaxtmjpNRSXHyL4Xivfsw&callback=initMap';
+            document.body.appendChild(script);
+        }
+      
+        // DOM is ready.
+        $(document).ready(function(){
+            loadGoogleMap();
+        });
+    </script>
 </body>
 </html>
 
