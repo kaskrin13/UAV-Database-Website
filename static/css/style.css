@@ -339,8 +339,8 @@ body {
 .info > li:last-child {	border-bottom: none; }
 
 .field-thumb {
-	width:500px;
-	display:block;
+	display:inline-block;
+	max-width:900px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -701,7 +701,7 @@ textarea.form-control {	height:135px; }
 
 #google-map { height: 435px; }
 
-/*
+
 @media screen and (max-width: 1199px) and (min-width: 992px) {
 	
 	.banner-main-home {	padding-bottom: 80px; }
@@ -904,4 +904,3 @@ textarea.form-control {	height:135px; }
 	.gallery_title h3 { font-size: 40px; }
 	.gallery_title h4 { font-size: 18px; }
 }
-*/
