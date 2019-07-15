@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}">
     
-	<title>Weed Science Farm</title>
+	<title>Entire Area</title>
 </head>
 
 <body>
@@ -63,11 +63,11 @@
                                 <div class="banner-main-home">
                                     <div class="banner-main-home-text">
                                         <div class="heading">
-                                            <h1>Weed Science Farm</h1>
+                                            <h1>Entire Area</h1>
                                             <p class="text-uppercase"></p>
                                         </div>
                                         <div class="desc">
-                                            <p>There is one field at this location. These fields are used primarily for crop production systems research. </p>
+                                            <p>This is an overview of the entire location. These fields are used primarily for crop production systems research. </p>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +79,8 @@
                                 <div class="box bottom-main">
                                     <div class="info float-container">
                                         <div class="col-sm-12 bottom-title">
-                                            <h3 class="text-uppercase">Weed Science Farm</h3>
+											<!-- CHANGE HERE -->
+                                            <h3 class="text-uppercase">Entire Area</h3>
                                             <h4 class="text-uppercase">Stoneville, MS</h4>
                                         </div>
                                         <p class="bottom-desc">Highlighted below are the fields that have data for the selected year. Click on a field to see dates flown and the type of data available for a specific date. Refer to the legend below for the crops grown in a certain field this year.</p>
@@ -95,12 +96,11 @@
 											<br>
                                             <li><span class="switchgrass"></span> Switchgrass</li>
                                         </ul>					
-										<div id="MapWrapper" style="margin:50px;">
-											<img id="fieldMap1" src="{{ url_for('static', filename='images/school-area.png') }}" alt="" class="map" usemap="#map" />
+										<div id="MapWrapper" style="margin:70px;">
+											<img id="fieldMap1" src="{{ url_for('static', filename='images/entire-area.png') }}" alt="" class="map" usemap="#map" />
 										</div>
 										<map name="map" id="map">
-											<area alt="Field 1" title="Field 1" data-toggle="modal" data-target="#modal1" shape="poly" coords="346,348,348,492,490,488,486,346" data-maphilight='{"fillColor":"caff70", "fillOpacity":"0.4", "strokeOpacity":"0"}' />
-										</map>
+											<area alt="Entire Area" title="Entire Area" data-toggle="modal" data-target="#modal1" shape="rect" coords="9,11,702,589" data-maphilight='{"fillColor":"eead0e", "fillOpacity":"0.4", "strokeOpacity":"0"}' />										</map>
 										{%- for field in fields %} 
 											<!-- Trigger the modal with an invisible button -->
 											<button type="button" style="display:none;" data-toggle="modal" data-target="#modal{{ loop.index }}">Open Modal</button>
@@ -121,7 +121,8 @@
 																<span class="caret"></span></button>
 																<ul class="dropdown-menu">
 																	{%- for imageType in date[1] %}
-																	<li><a href="{{ url_for('showSchoolField', year=year, index=(field[0]+'-'+imageType[1]|string)) }}">{{ imageType[0] }}</a></li>
+																	<!-- CHANGE HERE -->
+																	<li><a href="{{ url_for('showMechField', year=year, index=(field[0]+'-'+imageType[1]|string)) }}">{{ imageType[0] }}</a></li>
 																	{%- endfor %}
 																</ul>
 															</div>
@@ -133,7 +134,7 @@
 													</div>
 												</div>
 											</div>
-										{%- endfor %}						
+										{%- endfor %}			
                                     </div>
                                 </div>
                             </div>
