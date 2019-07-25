@@ -101,7 +101,7 @@
                                             <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
 												<!-- Button for Modal -->
 												<button type="button" class="btn-main" id="btn1" data-toggle="modal" data-target="#modal1">
-													<p class="btn-main-text" id="btn1-text">Frankel Farm</p>
+													<p class="btn-main-text" id="btn1-text">Precision Agriculture Farm</p>
 												</button>
 
 												<!-- Modal -->
@@ -133,7 +133,7 @@
                                             <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                                 <!-- Button for Modal -->
 												<button type="button" class="btn-main" id="btn2" data-toggle="modal" data-target="#modal2">
-													<p class="btn-main-text" id="btn2-text">Cumbaa Farm</p>
+													<p class="btn-main-text" id="btn2-text">Rice Farm</p>
 												</button>
 
 												<!-- Modal -->
@@ -165,7 +165,7 @@
                                             <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                                 <!-- Button for Modal -->
 												<button type="button" class="btn-main" id="btn3" data-toggle="modal" data-target="#modal3">
-													<p class="btn-main-text" id="btn3-text">Backer Farm</p>
+													<p class="btn-main-text" id="btn3-text">Weed Science Farm</p>
 												</button>
 
 												<!-- Modal -->
@@ -182,6 +182,73 @@
 																{%- for year in years %}
 																{%- if year[3] %}
 																<a href="{{ url_for('schoolFarm', year=year[0]) }}">
+																	<button class="yearButton" type="button">{{ year[0] }}</button>
+																</a>
+																{%- endif %}
+																{%- endfor %}
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+															</div>
+														</div>
+													</div>
+												</div>
+                                            </div>
+										</div>
+										<div class="row">
+                                            <p class="bottom-desc"> </p>
+                                            <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
+												<!-- Button for Modal -->
+												<button type="button" class="btn-main" id="btn4" data-toggle="modal" data-target="#modal4">
+													<p class="btn-main-text" id="btn4-text">Entire Area</p>
+												</button>
+
+												<!-- Modal -->
+												<div id="modal4" class="modal fade" role="dialog">
+													<div class="modal-dialog">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal">&times;</button>
+																<h4 class="modal-title">Please select a year below:</h4>
+															</div>
+															<div class="modal-body">
+																<p>Data available for these years.</p>
+																{%- for year in years %}
+																{%- if year[4] %}
+																<a href="{{ url_for('entireFarm', year=year[0]) }}">
+																	<button class="yearButton" type="button">{{ year[0] }}</button>
+																</a>
+																{%- endif %}
+																{%- endfor %}
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
+												<!-- Button for Modal -->
+												<button type="button" class="btn-main" id="btn5" data-toggle="modal" data-target="#modal5">
+													<p class="btn-main-text" id="btn5-text">Irrigation Farm</p>
+												</button>
+
+												<!-- Modal -->
+												<div id="modal5" class="modal fade" role="dialog">
+													<div class="modal-dialog">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal">&times;</button>
+																<h4 class="modal-title">Please select a year below:</h4>
+															</div>
+															<div class="modal-body">
+																<p>Data available for these years.</p>
+																{%- for year in years %}
+																{%- if year[5] %}
+																<a href="{{ url_for('suiFarm', year=year[0]) }}">
 																	<button class="yearButton" type="button">{{ year[0] }}</button>
 																</a>
 																{%- endif %}

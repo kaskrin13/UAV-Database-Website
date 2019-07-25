@@ -477,7 +477,25 @@ body {
 	opacity: 0.8;
 }
 
-#btn1-text:hover, #btn2-text:hover, #btn3-text:hover {
+#btn4 { 
+	background-image: url('../images/entire-area.png');
+}
+
+#btn4-text {
+	background-color: #7c0a6d;
+	opacity: 0.8;
+}
+
+#btn5 { 
+	background-image: url('../images/sui-area.png');
+}
+
+#btn5-text {
+	background-color: #7c0a0a;
+	opacity: 0.8;
+}
+
+#btn1-text:hover, #btn2-text:hover, #btn3-text:hover, #btn4-text:hover, #btn5-text:hover {
 	background-color: black;
 }
 

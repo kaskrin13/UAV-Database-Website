@@ -17,7 +17,7 @@ def about():
 def contact():
     return render_template("contact.html")
 
-@app.route("/frankel-farm/<year>")
+@app.route("/precision-ag-farm/<year>")
 def mechFarm(year):
     index = getYearIndex(year)
     mech = years[index][1]
@@ -35,18 +35,32 @@ def riceFarm(year):
     riceFarm = templateInfo(rice)
     return render_template("riceFarm.html", year=year, fields=riceFarm)
 
-@app.route("/backer-farm/<year>")
+@app.route("/weed-farm/<year>")
 def schoolFarm(year):
     index = getYearIndex(year)
     school = years[index][3]
     schoolFarm = templateInfo(school)
     return render_template("schoolFarm.html", year=year, fields=schoolFarm)
 
+@app.route("/entire-area/<year>")
+def entireFarm(year):
+    index = getYearIndex(year)
+    entire = years[index][4]
+    entireFarm = templateInfo(entire)
+    return render_template("entireFarm.html", year=year, fields=entireFarm)
+
+@app.route("/irrigation-area/<year>")
+def suiFarm(year):
+    index = getYearIndex(year)
+    sui = years[index][4]
+    suiFarm = templateInfo(sui)
+    return render_template("suiFarm.html", year=year, fields=suiFarm)
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
 
-@app.route("/frankel-farm/<year>/<index>")
+@app.route("/precision-ag-farm/<year>/<index>")
 def showMechField(year, index):
     i = getYearIndex(year)
     mech = years[i][1]
@@ -60,12 +74,26 @@ def showRiceField(year, index):
     riceIndex = int(index.split('-')[1])
     return render_template("fieldTemplate.html", fieldInfo=rice[riceIndex])
 
-@app.route("/backer-farm/<year>/<index>")
+@app.route("/weed-farm/<year>/<index>")
 def showSchoolField(year, index):
     i = getYearIndex(year)
     school = years[i][3]
     schoolIndex = int(index.split('-')[1])
     return render_template("fieldTemplate.html", fieldInfo=school[schoolIndex])
+
+@app.route("/entire-area/<year>/<index>")
+def showEntireField(year, index):
+    i = getYearIndex(year)
+    entire = years[i][4]
+    entireIndex = int(index.split('-')[1])
+    return render_template("fieldTemplate.html", fieldInfo=entire[entireIndex])
+
+@app.route("/irrigation-area/<year>/<index>")
+def showSuiField(year, index):
+    i = getYearIndex(year)
+    sui = years[i][5]
+    suiIndex = int(index.split('-')[1])
+    return render_template("fieldTemplate.html", fieldInfo=sui[suiIndex])
 
 @app.before_first_request
 def generateData():
@@ -74,6 +102,8 @@ def generateData():
         mech = []
         rice = []
         school = []
+        entire = []
+        sui = []
         for field in year[1]:
             if "Mech Farm" in field:
                 mech.append(field)
@@ -81,7 +111,11 @@ def generateData():
                 rice.append(field)
             if "School Farm" in field:
                 school.append(field)
-        years.append((year[0], mech, rice, school))
+            if "Entire Farm" in field:
+                entire.append(field)
+            if "Sui Farm" in field:
+                sui.append(field)
+        years.append((year[0], mech, rice, school, entire, sui))
 
 def templateInfo(farm):
     results = []
